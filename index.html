@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id" class="dark h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VPS Web Server Portal</title>
   
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -37,34 +37,33 @@
     }
   </script>
 </head>
-<body class="min-h-screen bg-[#121212] text-[#CFCFCF] font-sans flex flex-col justify-between selection:bg-[#545454] selection:text-white">
+<body class="h-full overflow-hidden bg-[#121212] text-[#CFCFCF] font-sans flex flex-col justify-between selection:bg-[#545454] selection:text-white">
 
-  <!-- Minimal Header -->
-  <header class="w-full border-b border-[#252525] py-4 px-6 flex justify-between items-center">
-    <div class="flex items-center space-x-2.5">
-      <div class="w-7 h-7 rounded-md bg-[#252525] border border-[#383838] flex items-center justify-center text-[#CFCFCF]">
-        <!-- Server / Globe Icon -->
+  <!-- Header -->
+  <header class="w-full border-b border-[#252525] py-3.5 sm:py-4 px-6 sm:px-10 flex justify-between items-center flex-shrink-0">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-lg bg-[#252525] border border-[#383838] flex items-center justify-center text-[#CFCFCF]">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </div>
-      <span class="text-sm font-semibold tracking-wide text-[#F5F5F5]">VPS Portal</span>
+      <span class="text-sm sm:text-base font-semibold tracking-wide text-[#F5F5F5]">VPS Portal</span>
     </div>
 
-    <!-- Active Indicator -->
-    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-mono bg-[#1c1c1c] text-[#7D7D7D] border border-[#383838]">
+    <!-- Status badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#1c1c1c] text-[#7D7D7D] border border-[#383838]">
       <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
       Online
     </div>
   </header>
 
-  <!-- Main Content Centered Card -->
-  <main class="flex-grow flex items-center justify-center p-4 sm:p-6">
-    <div class="w-full max-w-lg rounded-2xl bg-[#252525] border border-[#383838] p-8 sm:p-10 shadow-2xl text-center">
+  <!-- Main View (Fit Single Screen, No Scroll, Bigger Card on Desktop) -->
+  <main class="flex-grow flex items-center justify-center p-4 sm:p-8">
+    <div class="w-full max-w-md md:max-w-xl lg:max-w-2xl rounded-2xl md:rounded-3xl bg-[#252525] border border-[#383838] p-6 sm:p-10 md:p-12 shadow-2xl text-center">
       
       <!-- Icon badge -->
-      <div class="mx-auto w-14 h-14 rounded-xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-center text-[#CFCFCF] mb-6 shadow-inner">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <div class="mx-auto w-14 h-14 md:w-20 md:h-20 rounded-2xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-center text-[#CFCFCF] mb-5 md:mb-7 shadow-inner">
+        <svg class="w-7 h-7 md:w-10 md:h-10 text-[#CFCFCF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <rect x="2" y="3" width="20" height="14" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <line x1="8" y1="21" x2="16" y2="21" stroke-width="2" stroke-linecap="round"/>
           <line x1="12" y1="17" x2="12" y2="21" stroke-width="2" stroke-linecap="round"/>
@@ -72,38 +71,38 @@
       </div>
 
       <!-- Title & Subtitle -->
-      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-[#F5F5F5]">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#F5F5F5]">
         Webserver VPS
       </h1>
-      <p class="mt-2 text-sm text-[#7D7D7D]">
+      <p class="mt-2 md:mt-3 text-sm md:text-base text-[#7D7D7D]">
         Portal gerbang resmi untuk mengakses service webserver VPS.
       </p>
 
       <!-- URL Display Box -->
-      <div class="mt-8 p-3.5 rounded-xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-between gap-3">
-        <div class="text-left overflow-hidden">
-          <p class="text-[11px] font-mono uppercase tracking-wider text-[#7D7D7D]">Service URL</p>
-          <p class="text-xs sm:text-sm font-mono text-[#CFCFCF] truncate mt-0.5">
+      <div class="mt-6 md:mt-8 p-3.5 md:p-4 rounded-xl md:rounded-2xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-between gap-3 text-left">
+        <div class="overflow-hidden pr-2">
+          <p class="text-[10px] md:text-xs font-mono uppercase tracking-wider text-[#7D7D7D]">Service URL</p>
+          <p class="text-xs sm:text-sm md:text-base font-mono text-[#CFCFCF] truncate mt-0.5">
             https://8080-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech
           </p>
         </div>
 
         <!-- Copy Button -->
-        <button id="copyBtn" title="Salin URL" class="cursor-pointer p-2 rounded-lg bg-[#252525] hover:bg-[#383838] text-[#CFCFCF] hover:text-white border border-[#383838] transition-colors flex-shrink-0">
-          <svg id="copyIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <button id="copyBtn" title="Salin URL" class="cursor-pointer p-2.5 md:p-3 rounded-lg md:rounded-xl bg-[#252525] hover:bg-[#383838] text-[#CFCFCF] hover:text-white border border-[#383838] transition-colors flex-shrink-0">
+          <svg id="copyIcon" class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
           </svg>
-          <svg id="checkIcon" class="w-4 h-4 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg id="checkIcon" class="w-4 h-4 md:w-5 md:h-5 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
         </button>
       </div>
 
       <!-- Action Button to Open Webserver -->
-      <div class="mt-6">
-        <a href="https://8080-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech" target="_blank" rel="noopener noreferrer" class="cursor-pointer w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#CFCFCF] hover:bg-white text-[#121212] font-semibold text-sm tracking-wide transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.01]">
+      <div class="mt-6 md:mt-8">
+        <a href="https://8080-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech" target="_blank" rel="noopener noreferrer" class="cursor-pointer w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 md:py-4 rounded-xl md:rounded-2xl bg-[#CFCFCF] hover:bg-white text-[#121212] font-semibold text-sm md:text-base tracking-wide transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.01]">
           <span>Masuk ke Web Server</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
@@ -112,9 +111,9 @@
     </div>
   </main>
 
-  <!-- Minimal Footer -->
-  <footer class="w-full border-t border-[#252525] py-4 text-center text-xs text-[#545454]">
-    VPS Webserver Gateway &bull; Reihan Kaissya
+  <!-- Minimal Footer (Direct at Bottom, No Scrolling) -->
+  <footer class="w-full border-t border-[#252525] py-3.5 sm:py-4 text-center text-xs text-[#545454] flex-shrink-0">
+    VPS Webserver Gateway &bull; Instabox Tech
   </footer>
 
   <!-- Script for Copy URL -->
