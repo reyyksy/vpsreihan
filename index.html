@@ -57,7 +57,7 @@
     </div>
   </header>
 
-  <!-- Main View (Fit Screen, No Scroll, 2 Columns for Services) -->
+  <!-- Main View (Fit Screen, No Scroll, 3 Columns for Services) -->
   <main class="flex-grow flex items-center justify-center p-4 sm:p-6 md:p-8">
     <div class="w-full max-w-lg md:max-w-4xl lg:max-w-5xl">
 
@@ -71,8 +71,8 @@
         </p>
       </div>
 
-      <!-- 2 Columns Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+      <!-- 3 Columns Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
 
         <!-- Kolom 1: Web Server (Port 8080) -->
         <div class="rounded-2xl md:rounded-3xl bg-[#252525] border border-[#383838] p-5 sm:p-8 shadow-2xl flex flex-col justify-between">
@@ -129,7 +129,7 @@
           </div>
         </div>
 
-        <!-- Kolom 2: File Server (Port 3000) -->
+        <!-- Kolom 2: Dev Web Server (Port 3000) -->
         <div class="rounded-2xl md:rounded-3xl bg-[#252525] border border-[#383838] p-5 sm:p-8 shadow-2xl flex flex-col justify-between">
           <div>
             <!-- Icon & Port Badge -->
@@ -146,10 +146,10 @@
 
             <!-- Title -->
             <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-[#F5F5F5]">
-              File Server
+              Dev Web Server
             </h2>
             <p class="mt-1 text-xs sm:text-sm text-[#7D7D7D]">
-              Service pengelolaan & berkas storage server.
+              Service web server untuk pengembangan aplikasi.
             </p>
 
             <!-- URL Box -->
@@ -160,11 +160,11 @@
                   https://3000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech
                 </p>
               </div>
-              <button id="copyFileBtn" title="Salin URL" class="cursor-pointer p-2 rounded-lg bg-[#252525] hover:bg-[#383838] text-[#CFCFCF] hover:text-white border border-[#383838] transition-colors flex-shrink-0">
-                <svg id="copyFileIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <button id="copyDevBtn" title="Salin URL" class="cursor-pointer p-2 rounded-lg bg-[#252525] hover:bg-[#383838] text-[#CFCFCF] hover:text-white border border-[#383838] transition-colors flex-shrink-0">
+                <svg id="copyDevIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                 </svg>
-                <svg id="checkFileIcon" class="w-4 h-4 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg id="checkDevIcon" class="w-4 h-4 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </button>
@@ -174,10 +174,42 @@
           <!-- Action Button -->
           <div class="mt-5 sm:mt-6">
             <a href="https://3000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech" target="_blank" rel="noopener noreferrer" class="cursor-pointer w-full inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-3.5 rounded-xl bg-[#CFCFCF] hover:bg-white text-[#121212] font-semibold text-xs sm:text-sm tracking-wide transition-all duration-200 shadow hover:scale-[1.01]">
-              <span>Masuk ke File Server</span>
+              <span>Masuk ke Dev Web Server</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Kolom 3: File Server (Port 4000) -->
+        <div class="rounded-2xl md:rounded-3xl bg-[#252525] border border-[#383838] p-5 sm:p-8 shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4 sm:mb-6">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-center text-[#CFCFCF] shadow-inner">
+                <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+              </div>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#1c1c1c] text-[#CFCFCF] border border-[#383838]">Port 4000</span>
+            </div>
+            <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-[#F5F5F5]">File Server</h2>
+            <p class="mt-1 text-xs sm:text-sm text-[#7D7D7D]">Service pengelolaan & berkas storage server.</p>
+            <div class="mt-4 sm:mt-6 p-3 rounded-xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-between gap-2 text-left">
+              <div class="overflow-hidden pr-1">
+                <p class="text-[10px] font-mono uppercase tracking-wider text-[#7D7D7D]">Service URL</p>
+                <p class="text-xs sm:text-sm font-mono text-[#CFCFCF] truncate mt-0.5">https://4000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech</p>
+              </div>
+              <button id="copyFileBtn" title="Salin URL" class="cursor-pointer p-2 rounded-lg bg-[#252525] hover:bg-[#383838] text-[#CFCFCF] hover:text-white border border-[#383838] transition-colors flex-shrink-0">
+                <svg id="copyFileIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                <svg id="checkFileIcon" class="w-4 h-4 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              </button>
+            </div>
+          </div>
+          <div class="mt-5 sm:mt-6">
+            <a href="https://4000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech" target="_blank" rel="noopener noreferrer" class="cursor-pointer w-full inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-3.5 rounded-xl bg-[#CFCFCF] hover:bg-white text-[#121212] font-semibold text-xs sm:text-sm tracking-wide transition-all duration-200 shadow hover:scale-[1.01]">
+              <span>Masuk ke File Server</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
           </div>
         </div>
@@ -216,7 +248,8 @@
     }
 
     setupCopy('copyWebBtn', 'copyWebIcon', 'checkWebIcon', 'https://8080-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech');
-    setupCopy('copyFileBtn', 'copyFileIcon', 'checkFileIcon', 'https://3000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech');
+    setupCopy('copyDevBtn', 'copyDevIcon', 'checkDevIcon', 'https://3000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech');
+    setupCopy('copyFileBtn', 'copyFileIcon', 'checkFileIcon', 'https://4000-agq7rc5l3ircnfub3ib3k7yg4u.instabox.tech');
   </script>
 
 </body>
